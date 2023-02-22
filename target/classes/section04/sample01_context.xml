@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="customRequestDao" class="section04.sample01.CustomRequestDao"/>
+	<bean id="customRequestDetails" class="section04.sample01.CustomRequestDetails" scope="prototype"/>
+	
+	<bean class="section04.sample01.CustomRequestService">
+		<constructor-arg name="customRequestDao" ref="customRequestDao"/>
+		<constructor-arg name="customRequestDetails" ref="customRequestDetails"/>
+	</bean>
+	
+	<bean id="testBean" class="section04.sample01.TestBean" scope="prototype"/>
+</beans>
