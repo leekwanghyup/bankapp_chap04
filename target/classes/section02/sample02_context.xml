@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<bean id="memberListDTO" class="section02.sample02.MemberListDTO">
+		<constructor-arg index="0">
+			<util:list list-class="java.util.ArrayList">
+				<bean class="section02.sample02.MemberVO" p:id="1" p:name="홍길동" />
+				<bean class="section02.sample02.MemberVO" p:id="2" p:name="김두한" />
+				<bean class="section02.sample02.MemberVO" p:id="3" p:name="이정재" />
+			</util:list>
+		</constructor-arg>
+	</bean>
+	
+</beans>

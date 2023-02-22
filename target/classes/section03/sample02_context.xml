@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	 <!-- 자식 빈 정의는  depends-on 속성을 상속하지 않음  -->
+	 <bean id="demoTemplate" class="section02.sample03.DemoTemplate" 
+	 	depends-on="demoBaseBean" abstract="true"/>
+	 	
+	 <bean id="demoA" class="section02.sample03.DemoA" parent="demoTemplate" />
+	 <bean id="demoB" class="section02.sample03.DemoB" parent="demoTemplate" />	
+	 	
+	 <bean id="demoBaseBean" class="section02.sample03.DemoBaseBean"/>
+	
+</beans>
