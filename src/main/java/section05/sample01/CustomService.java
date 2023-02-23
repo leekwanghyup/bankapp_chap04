@@ -19,6 +19,7 @@ public class CustomService implements ApplicationContextAware{
 		System.out.println("Create CustomService Bean");
 	}
 
+	// 스프링컨테이너가 빈 등록시 이 메서드를 자동으로 호출
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		System.out.println("call setApplicationContext method");
