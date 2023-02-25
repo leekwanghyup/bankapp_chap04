@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<!-- 내부분이에서 util스키마 list 엘리먼트 사용 -->
+	<bean id="someBean" class="bankapp_chap04.section02.sample02.SomeBean">
+		<constructor-arg name="listType">
+			<util:list list-class="java.util.ArrayList">
+				<value>A simple String value in list</value>
+				<value>Another simple String value in list</value>
+			</util:list>
+		</constructor-arg>
+	</bean>	
+	
+</beans>
